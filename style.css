@@ -1,0 +1,54 @@
+
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    padding-top:30px;
+}
+
+body h3 {
+    padding-top:50px;
+}
+ body nav {
+     padding: 15px;
+ }
+.toc ul {
+    padding:0;
+    list-style: none;
+}
+
+.toc li {
+    margin:0;
+    margin-bottom: 0.5rem;
+}
+
+.toc li a {
+    text-decoration: none;
+}
+
+.toc li a:hover {
+    text-decoration: underline;
+}
+
+.required-classes .card {
+    border-left: 8px solid #0c63e4;
+}
+
+div .text-muted {
+    padding-top:70px;
+}
+
+
+img {
+    height: 325px;
+    width: 250px;
+    padding-bottom: 10px;
+}
+
+.container {
+    padding:50px;
+}
+
+
+.col-sm-8 {
+    width: 50%;
+}

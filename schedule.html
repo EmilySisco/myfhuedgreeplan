@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Degree Plannr | Schedule</title>
+  </head>
+  <body class="d-flex flex-column h-100">
+    <!-- TODO -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">My FHU Degree Plan</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="schedule.html">Schedule</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+      <div class="row main-content">
+        <!-- Classes -->
+        <div class="col-lg-4 required-classes">
+          <h3>Required Classes</h3>
+
+          <ul class="nav nav-tabs" id="coursesTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link active"
+                id="lac-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#lac"
+                type="button"
+                role="tab"
+                aria-controls="lac"
+                aria-selected="true"
+              >
+                LAC
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="idd-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#cs"
+                type="button"
+                role="tab"
+                aria-controls="cs"
+                aria-selected="false"
+              >
+                IDD
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button
+                class="nav-link"
+                id="contact-tab"
+                data-bs-toggle="tab"
+                data-bs-target="#contact"
+                type="button"
+                role="tab"
+                aria-controls="contact"
+                aria-selected="false"
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
+          <div class="tab-content px-3" id="coursesTabContent">
+            <div
+              class="tab-pane fade show active"
+              id="lac"
+              role="tabpanel"
+              aria-labelledby="lac-tab"
+            >
+              <!-- LAC Requirements -->
+              <div class="my-4" id="lac-reqs">
+
+                <!-- <div class="card my-2">
+                  <div class="card-body">
+                    <div class="row">
+                      <h5 class="card-title col">
+                        <b>Life of Christ</b>
+                      </h5>
+                      <p class="col-3 text-end">2 hours</p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <p class="card-subtitle">BIB 121</p>
+                      </div>
+                      <div class="col-4 text-end">
+                        <span class="text-muted">Fall</span>
+                      </div>
+                    </div>
+                    <a
+                      href="#bib121"
+                      class="card-link fw-light"
+                      data-bs-toggle="collapse"
+                      role="button"
+                      aria-expanded="false"
+                      >Course description ›</a
+                    >
+                    <div
+                      class="course-description collapse card-text"
+                      id="bib121"
+                    >
+                      <p class="text-muted card-text">
+                        A thorough textual study of the life of Jesus the
+                        Christ. Emphasis is given to his virgin birth, his
+                        message and ministry, his crucifixion, his resurrection,
+                        and his ascension, all leading to a greater awareness of
+                        his greatness as the Son of God and Savior of the world.
+                        Moral, doctrinal, historical, and practical aspects of
+                        the life of Christ are also emphasized. (Text course.)
+                      </p>
+                      
+                    </div>
+                  </div>
+                </div> -->
+
+                <!-- <div class="card my-2">
+                  <div class="card-body">
+                    <div class="row">
+                      <h5 class="card-title col">
+                        <b>Speech</b>
+                      </h5>
+                      <p class="col-3 text-end">2 hours</p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <p class="card-subtitle">BIB 121</p>
+                      </div>
+                      <div class="col-4 text-end">
+                        <span class="text-muted">Fall, Spring</span>
+                      </div>
+                    </div>
+                   
+                    <a
+                      href="#cis171"
+                      class="card-link fw-light"
+                      data-bs-toggle="collapse"
+                      role="button"
+                      aria-expanded="false"
+                      >Course description ›</a
+                    >
+                    <div
+                      class="course-description collapse card-text"
+                      id="cis171"
+                    >
+                      <p class="text-muted card-text">
+                        A study of the design of algorithms, pseudocode, data
+                        types, control structures, arrays, program testing, and
+                        text file processing using a high-level programming
+                        language.
+                      </p>
+                      <p class="card-text small">
+                        Corequisite: MAT 101 College Algebra.
+                      </p>
+                    </div>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="cs"
+              role="tabpanel"
+              aria-labelledby="profile-cs"
+            >
+              <!-- CS Requirements -->
+              <div class="my-4" id = "idd-reqs">
+
+              </div>
+            </div>
+            <div
+              class="tab-pane fade"
+              id="cs"
+              role="tabpanel"
+              aria-labelledby="profile-cs"
+            >
+              ...
+            </div>
+          </div>
+        </div>
+
+        <!-- Semester Schedules -->
+        <div class="col-lg-6 semester-schedules">
+          <h3>Semester Schedules</h3>
+
+          <div class="accordion my-4" id="fall2019">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="fall2019heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#fall2019schedule"
+                  aria-expanded="true"
+                  aria-controls="fall2019schedule"
+                >
+                  <h4 class="my-0">Fall 2019</h4>
+                </button>
+              </h2>
+              <div
+                id="fall2019schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="fall2019heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>Art 130</td>
+                      <td>
+                        <span class="fw-bold">2-D Design</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                    <tr>
+                      <td>BIB 121</td>
+                      <td>
+                        <span class="fw-bold"> The Life of Christ </span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 171</td>
+                      <td>
+                        <span class="fw-bold">Computer Programming I</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                      <td>CIS 211</td>
+                      <td>
+                        <span class="fw-bold">Intro to Web Design</span>
+                      </td>
+                      <td> <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>HIS 221</td>
+                      <td>
+                        <span class="fw-bold">American History</span>
+                      </td>
+                      <td> <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">14</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="spring2020">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="spring2020heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#spring2020schedule"
+                  aria-expanded="true"
+                  aria-controls="spring2020schedule"
+                >
+                  <h4 class="my-0">Spring 2020</h4>
+                </button>
+              </h2>
+              <div
+                id="spring2020schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="spring2020heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>ART 120</td>
+                      <td>
+                        <span class="fw-bold"> Drawing I </span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>ART 201</td>
+                      <td>
+                        <span class="fw-bold">Intro to Photography</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 230</td>
+                      <td>
+                        <span class="fw-bold">Digital Graphic Fundamentals</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>BIO 110</td>
+                      <td>
+                        <span class="fw-bold">Principles of Biology</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>BIB 122</td>
+                      <td>
+                        <span class="fw-bold">Acts of the Apostles</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 172</td>
+                      <td>
+                        <span class="fw-bold">Computer Programming II</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">17</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="fall2020">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="fall2020heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#fall2020schedule"
+                  aria-expanded="true"
+                  aria-controls="fall2020schedule"
+                >
+                  <h4 class="my-0">Fall 2020</h4>
+                </button>
+              </h2>
+              <div
+                id="fall2020schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="fall2020heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>ART235</td>
+                      <td>
+                        <span class="fw-bold"> Graphic Design I </span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 260</td>
+                      <td>
+                        <span class="fw-bold">Black and White Photography</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> N/A </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 336</td>
+                      <td>
+                        <span class="fw-bold">Illustration</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> N/A </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 407</td>
+                      <td>
+                        <span class="fw-bold">Studio Craft</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> N/A </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>BIB 230</td>
+                      <td>
+                        <span class="fw-bold">Marriage and the Family</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> N/A </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">18</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="spring2021">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="spring2021heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#spring2021schedule"
+                  aria-expanded="true"
+                  aria-controls="spring2021schedule"
+                >
+                  <h4 class="my-0">Spring 2021</h4>
+                </button>
+              </h2>
+              <div
+                id="spring2021schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="spring2021heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>ART 285</td>
+                      <td>
+                        <span class="fw-bold"> Alternative Processess </span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 337</td>
+                      <td>
+                        <span class="fw-bold">Graphic Design II</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 405</td>
+                      <td>
+                        <span class="fw-bold">Digital Craft</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 410</td>
+                      <td>
+                        <span class="fw-bold">Readings in Art History</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>BIB 112</td>
+                      <td>
+                        <span class="fw-bold">Life of Moses</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>BUS 399D</td>
+                      <td>
+                        <span class="fw-bold">Personal and Professional Branding </span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 322</td>
+                      <td>
+                        <span class="fw-bold"> Human-Computer Interaction </span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">20</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="fall2021">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="fall2021heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#fall2021schedule"
+                  aria-expanded="true"
+                  aria-controls="fall2021schedule"
+                >
+                  <h4 class="my-0">Fall 2021</h4>
+                </button>
+              </h2>
+              <div
+                id="fall2021schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="fall2021heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>ART 240</td>
+                      <td>
+                        <span class="fw-bold">Painting 1</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 304</td>
+                      <td>
+                        <span class="fw-bold">History of Photography</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 370</td>
+                      <td>
+                        <span class="fw-bold">Photo Arts</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 399</td>
+                      <td>
+                        <span class="fw-bold">Independant Study</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>BIB 211</td>
+                      <td>
+                        <span class="fw-bold">Joshua, Judges, and Ruth</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <tr>
+                        <td>BUS 311</td>
+                        <td>
+                          <span class="fw-bold">Work:Life I</span>
+                        </td>
+                        <td>
+                          <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                        </td>
+                        <td>1</td>
+                      </tr>
+                      <tr>
+                        <td>CIS 267</td>
+                        <td>
+                          <span class="fw-bold">Applicaiton Development I</span>
+                        </td>
+                        <td>
+                          <span class="badge bg-primary"> IDD </span>
+                        </td>
+                        <td>3</td>
+                      </tr>
+                      <tr>
+                        <td>COM 253</td>
+                        <td>
+                          <span class="fw-bold">Digital Storytelling</span>
+                        </td>
+                        <td>
+                          <span class="badge bg-primary"> IDD </span>
+                        </td>
+                        <td>3</td>
+                      </tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">21</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="spring2022">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="spring2022heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#spring2022schedule"
+                  aria-expanded="true"
+                  aria-controls="spring2022schedule"
+                >
+                  <h4 class="my-0">Spring 2022</h4>
+                </button>
+              </h2>
+              <div
+                id="spring2022schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="spring2022heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>ART 220</td>
+                      <td>
+                        <span class="fw-bold"> Drawing II </span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>ART 340</td>
+                      <td>
+                        <span class="fw-bold">Painting II</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 268</td>
+                      <td>
+                        <span class="fw-bold">Application Development II</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>MKT 466</td>
+                      <td>
+                        <span class="fw-bold">Small Business Marketing</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                      </tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">15</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="fall2022">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="fall2022heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#fall2022schedule"
+                  aria-expanded="true"
+                  aria-controls="fall2022schedule"
+                >
+                  <h4 class="my-0">Fall 2022</h4>
+                </button>
+              </h2>
+              <div
+                id="fall2022schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="fall2022heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>BIB 346</td>
+                      <td>
+                        <span class="fw-bold">Foundations of Faith</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 311</td>
+                      <td>
+                        <span class="fw-bold">Advanced Web Design</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 388</td>
+                      <td>
+                        <span class="fw-bold">Mobile Application Development</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">9</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion my-4" id="spring2023">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="spring2023heading">
+                <button
+                  class="accordion-button"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#spring2023schedule"
+                  aria-expanded="true"
+                  aria-controls="spring2023schedule"
+                >
+                  <h4 class="my-0">Spring 2023</h4>
+                </button>
+              </h2>
+              <div
+                id="spring2023schedule"
+                class="accordion-collapse collapse show"
+                aria-labelledby="spring2023heading"
+              >
+                <div class="accordion-body">
+                  <table class="table table-hover">
+                    <thead>
+                      <th>Course</th>
+                      <td></td>
+                      <td></td>
+                      <th>Credits</th>
+                    </thead>
+                    <tr>
+                      <td>BIB 493</td>
+                      <td>
+                        <span class="fw-bold">Values in Human Thought </span>
+                      </td>
+                      <td>
+                        <span class="badge bg-secondary"> LAC </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>COM 358</td>
+                      <td>
+                        <span class="fw-bold">Social Media</span>
+                      </td>
+                      <td>
+                        <span class="badge" style ="background-color:#7eccf8" > Elect </span>
+                      </td>
+                      <td>3</td>
+                    </tr>
+                    <tr>
+                      <td>CIS 495</td>
+                      <td>
+                        <span class="fw-bold">Capstone Senior Poject</span>
+                      </td>
+                      <td>
+                        <span class="badge bg-primary"> IDD </span>
+                      </td>
+                      <td>3</td>
+                      </tr>                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td class="fw-bold">9</td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-2 position-sticky top-0 h-100 ps-5 toc ">
+          <p class="text-muted">On this page</p>
+          <nav>
+            <ul>
+              <li><a href="#fall2019">Fall 2019</a></li>
+              <li><a href="#spring2020">Spring 2020</a></li>
+              <li><a href="#fall2020">Fall 2020</a></li>
+              <li><a href="#spring2021">Spring 2021</a></li>
+              <li><a href="#fall2021">Fall 2021</a></li>
+              <li><a href="#spring2022">Spring 2022</a></li>
+              <li><a href="#fall2022">Fall 2022</a></li>
+              <li><a href="spring2023">Spring 2023</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-auto bg-dark text-light py-4">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <p>Made with ❤️ by FHU students!</p>
+          </div>
+
+          <div class="col-md-3">
+            <p>&copy; 2021 Freed-Hardeman University</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="app.js"></script>
+    
+  </body>
+</html>
